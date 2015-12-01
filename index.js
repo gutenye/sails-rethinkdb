@@ -65,7 +65,7 @@ module.exports = (function() {
      * Insert a single document into a collection.
      */
     create(connectionName, tableName, data, cb) {
-      pd("create", data)
+      //pd("create", data)
       connections[connectionName].tables[tableName].insert(data, cb)
     },
 
@@ -75,7 +75,7 @@ module.exports = (function() {
      * Insert an array of documents into a collection.
      */
     createEach: function(connectionName, tableName, data, cb) {
-      pd("createEach", data)
+      //pd("createEach", data)
       connections[connectionName].tables[tableName].insertEach(data, cb)
     },
 
@@ -85,7 +85,7 @@ module.exports = (function() {
      * Find all matching documents in a colletion.
      */
     find(connectionName, tableName, query, cb) {
-      pd("find", tableName, query)
+      //pd("find", tableName, query)
       connections[connectionName].tables[tableName].find(query, cb)
     },
 
@@ -95,7 +95,7 @@ module.exports = (function() {
      * Update all documents matching a criteria object in a collection.
      */
     update(connectionName, tableName, query, data, cb) {
-      pd("update", query, data)
+      //pd("update", query, data)
       connections[connectionName].tables[tableName].update(query, data, cb)
     },
 
@@ -105,7 +105,7 @@ module.exports = (function() {
      * Destroy all documents matching a criteria object in a collection.
      */
     destroy(connectionName, tableName, query, cb) {
-      pd("destroy", query)
+      //pd("destroy", query)
       connections[connectionName].tables[tableName].destroy(query, cb)
     },
 
@@ -115,7 +115,7 @@ module.exports = (function() {
      * Return a count of the number of records matching a criteria.
      */
     count(connectionName, tableName, query, cb) {
-      pd("count", query)
+      //pd("count", query)
       connections[connectionName].tables[tableName].count(query, cb)
     }
 
