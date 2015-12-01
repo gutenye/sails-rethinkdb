@@ -29,7 +29,7 @@ USAGE
   connection: 'rethinkdb'
 ```
 
-[Options Reference](http://rethinkdb.com/api/javascript/connect)
+[Connections Options Reference](http://rethinkdb.com/api/javascript/connect)
 
 native() method
 
@@ -45,7 +45,7 @@ Roadmap
 ------
 
 ```
-Query Syntax        10%
+Query Syntax        20%
 create              YES
 update              YES
 destroy             YES
