@@ -3,12 +3,12 @@ var Connection = require("./lib/connection")
 global.pd = console.log.bind(console)
 
 module.exports = (function() {
+  var connections = {}
+
   var adapter = {
     syncable: true,
 
     defaults: {},
-
-    connections: {},
 
     /**
      * Register A Connection
@@ -18,11 +18,11 @@ module.exports = (function() {
      */
     registerConnection(options, tables, cb) {
       if(!options.identity) return cb(new Error('Connection is missing an identity.'))
-      if(this.connections[options.identity]) return cb(new Error('Connection is already registered.'))
+      if(connections[options.identity]) return cb(new Error('Connection is already registered.'))
 
       Connection.connect(options, tables, (err, connection) => {
         if (err) return cb(err)
-        this.connections[options.identity] = connection
+        connections[options.identity] = connection
         cb()
       })
     },
@@ -39,12 +39,12 @@ module.exports = (function() {
         conn = null
       }
       if (!conn) {
-        this.connections = {}
+        connections = {}
         return cb()
       }
-      if(!this.connections[conn]) return cb()
-      this.connections[conn].close(() => {
-        delete this.connections[conn]
+      if(!connections[conn]) return cb()
+      connections[conn].close(() => {
+        delete connections[conn]
       })
       cb()
     },
@@ -56,7 +56,7 @@ module.exports = (function() {
      * queries.
      */
     native(connectionName, tableName, cb) {
-      cb(null, this.connections[connectionName].tables[tableName])
+      cb(null, connections[connectionName].tables[tableName].table)
     },
 
     /**
@@ -66,7 +66,7 @@ module.exports = (function() {
      */
     create(connectionName, tableName, data, cb) {
       pd("create", data)
-      this.connections[connectionName].tables[tableName].insert(data, cb)
+      connections[connectionName].tables[tableName].insert(data, cb)
     },
 
     /**
@@ -76,7 +76,7 @@ module.exports = (function() {
      */
     createEach: function(connectionName, tableName, data, cb) {
       pd("createEach", data)
-      this.connections[connectionName].tables[tableName].insertEach(data, cb)
+      connections[connectionName].tables[tableName].insertEach(data, cb)
     },
 
     /**
@@ -85,8 +85,8 @@ module.exports = (function() {
      * Find all matching documents in a colletion.
      */
     find(connectionName, tableName, query, cb) {
-      pd("find", query)
-      this.connections[connectionName].tables[tableName].find(query, cb)
+      pd("find", tableName, query)
+      connections[connectionName].tables[tableName].find(query, cb)
     },
 
     /**
@@ -96,7 +96,7 @@ module.exports = (function() {
      */
     update(connectionName, tableName, query, data, cb) {
       pd("update", query, data)
-      this.connections[connectionName].tables[tableName].update(query, data, cb)
+      connections[connectionName].tables[tableName].update(query, data, cb)
     },
 
     /**
@@ -106,7 +106,7 @@ module.exports = (function() {
      */
     destroy(connectionName, tableName, query, cb) {
       pd("destroy", query)
-      this.connections[connectionName].tables[tableName].destroy(query, cb)
+      connections[connectionName].tables[tableName].destroy(query, cb)
     },
 
     /**
@@ -116,7 +116,7 @@ module.exports = (function() {
      */
     count(connectionName, tableName, query, cb) {
       pd("count", query)
-      this.connections[connectionName].tables[tableName].count(query, cb)
+      connections[connectionName].tables[tableName].count(query, cb)
     }
 
     /** TODO
