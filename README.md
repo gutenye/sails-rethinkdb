@@ -54,11 +54,11 @@ Roadmap
 
 ```
 Sails Query Syntax  20%
-create              YES
-update              YES
-destroy             YES
-count               YES
-native              YES
+create              COMPLETED
+update              COMPLETED
+destroy             COMPLETED
+count               COMPLETED
+native              COMPLETED
 join                NOT
 stream              NOT
 ```
