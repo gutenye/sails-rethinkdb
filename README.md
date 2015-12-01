@@ -53,7 +53,7 @@ Roadmap
 ------
 
 ```
-Query Syntax        20%
+Sails Query Syntax  20%
 create              YES
 update              YES
 destroy             YES
