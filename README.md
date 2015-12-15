@@ -23,6 +23,8 @@ $ npm install gutenye/sails-rethinkdb
 USAGE
 -----
 
+For `Node < 5.1`, use `node --harmony`
+
 ```
 # edit config/connections.js
 
