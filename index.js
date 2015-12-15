@@ -6,9 +6,15 @@ module.exports = (function() {
   var connections = {}
 
   var adapter = {
+    // Which type of primary key is used by default
+    pkFormat: 'string',
+
+    // to track schema internally
     syncable: true,
 
-    defaults: {},
+    defaults: {
+      schema: false
+    },
 
     /**
      * Register A Connection
@@ -85,7 +91,7 @@ module.exports = (function() {
      * Find all matching documents in a colletion.
      */
     find(connectionName, tableName, query, cb) {
-      //pd("find", tableName, query)
+      //pd("find", query)
       connections[connectionName].tables[tableName].find(query, cb)
     },
 
