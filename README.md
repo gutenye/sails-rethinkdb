@@ -55,7 +55,7 @@ Roadmap
 ------
 
 ```
-Sails Query Syntax  20%
+Sails Query Syntax  80%
 create              COMPLETED
 update              COMPLETED
 destroy             COMPLETED
