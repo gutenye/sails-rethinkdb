@@ -6,8 +6,8 @@ var pd = console.log.bind(console)
 var log = console.log.bind(console)
 
 var fixtures = [
-  {id: 1, a: 1},
-  {id: 2, a: 1, b: 2},
+  {id: 1, a: 1, tags: [1]},
+  {id: 2, a: 1, b: 2, tags: [1, 2, 3]},
   {id: 3, a: 3},
   {id: 4, a: 2}
 ]
@@ -18,6 +18,7 @@ var fixtures = [
 //var q = {where: {or: [{id: 1}, {id: 2}]}}
 //var q = {where: {a: {">": 1}, or: [{id: 3}]}}
 
+//var q = {where: {tags: {"contains": [1, 2]}}}
 //var q = {where: null}
 //var q = {where: {id: 1}, limit: 1}
 //var q = {limit: 1}

@@ -54,16 +54,16 @@ User.native((err, table) => {
 Roadmap
 ------
 
-```
-Sails Query Syntax  80%
-create              COMPLETED
-update              COMPLETED
-destroy             COMPLETED
-count               COMPLETED
-native              COMPLETED
-join                NOT
-stream              NOT
-```
+|                     | |
+|---------------------|
+|Sails Query Language | [80%](https://github.com/gutenye/sails-rethinkdb/blob/master/lib/query.js)
+| create              | COMPLETED
+| update              | COMPLETED
+| destroy             | COMPLETED
+| count               | COMPLETED
+| native              | COMPLETED
+| join                | NOT
+| stream              | NOT
 
 Development
 ===========
