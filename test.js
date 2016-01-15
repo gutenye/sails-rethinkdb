@@ -8,7 +8,7 @@ var log = console.log.bind(console)
 var fixtures = [
   {id: 1, a: 1},
   {id: 2, a: 1, b: 2},
-  {id: 3, a: 2},
+  {id: 3, a: 3},
   {id: 4, a: 2}
 ]
 
@@ -19,8 +19,13 @@ var fixtures = [
 //var q = {where: {a: {">": 1}, or: [{id: 3}]}}
 
 //var q = {where: null}
-//var q = {limit: 1}
 //var q = {where: {id: 1}, limit: 1}
+//var q = {limit: 1}
+
+//var q = {sort: "a"}
+//var q = {sort: "a ASC"}
+//var q = {sort: "a DESC"}
+//var q = {sort: {id: 0, a: 0}}
 
 r.connect((err, conn) => {
   if (err) throw err
