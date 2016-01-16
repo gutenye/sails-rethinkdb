@@ -65,6 +65,24 @@ Roadmap
 | join                | NOT
 | stream              | NOT
 
+Query Language Different from Official
+
+- contains is for array
+
+```
+{tags: {"contains": [1, 2]}} means tags.includes(1) and tags.includes(2)
+```
+
+- limit, skip support string, and limit support -1
+
+```
+{limit: 30}
+{limit: "30"}
+{limit: -1}     -1 means all records
+```
+
+
+
 Development
 ===========
 
