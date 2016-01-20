@@ -101,7 +101,6 @@ module.exports = (function() {
      * Update all documents matching a criteria object in a collection.
      */
     update(connectionName, tableName, query, data, cb) {
-      //pd("update", query, data)
       connections[connectionName].tables[tableName].update(query, data, cb)
     },
 
