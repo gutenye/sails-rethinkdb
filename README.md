@@ -54,8 +54,8 @@ User.native((err, table) => {
 Roadmap
 ------
 
-|                     | |
-|---------------------|
+|                     |                     |
+|---------------------|---------------------|
 |Sails Query Language | [80%](https://github.com/gutenye/sails-rethinkdb/blob/master/lib/query.js)
 | create              | COMPLETED
 | update              | COMPLETED
