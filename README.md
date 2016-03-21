@@ -9,7 +9,7 @@ sails-rethinkdb, a RethinkDB Adapter for Sails.
 [Gratipay](https://gratipay.com/gutenye) |
 [Bountysource](https://www.bountysource.com/teams/gutenye)
 
-**Warnning**: still under early development, not production ready, use at your own risk.
+**Warnning**: still under development, not production ready, use at your own risk or help to test it.
 
 Contributions are welcome, the code is well structure and easy to understand.
 
