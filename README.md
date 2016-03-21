@@ -17,7 +17,7 @@ Install
 -------
 
 ```
-$ npm install gutenye/sails-rethinkdb
+$ npm install gutenye/sails-rethinkdb#master
 ```
 
 USAGE
@@ -80,8 +80,6 @@ Query Language Different from Official
 {limit: "30"}
 {limit: -1}     -1 means all records
 ```
-
-
 
 Development
 ===========
