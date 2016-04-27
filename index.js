@@ -1,6 +1,5 @@
 "use strict";
 var Connection = require("./lib/connection")
-global.pd = console.log.bind(console)
 
 module.exports = (function() {
   var connections = {}
