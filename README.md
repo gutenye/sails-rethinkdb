@@ -47,6 +47,12 @@ User.native((err, table) => {
 })
 ```
 
+Relationships
+
+```
+r.table("posts").indexCreate("user")
+```
+
 Roadmap
 ------
 
@@ -58,7 +64,7 @@ Roadmap
 | destroy             | COMPLETED
 | count               | COMPLETED
 | native              | COMPLETED
-| join                | NOT
+| join                | COMPLETED
 | stream              | NOT
 
 Query Language Different from Official
