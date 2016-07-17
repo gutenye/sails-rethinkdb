@@ -21,8 +21,6 @@ $ npm install gutenye/sails-rethinkdb#master
 USAGE
 -----
 
-For `Node < 5.1`, use `node --harmony`
-
 ```
 # edit config/connections.js
 
@@ -94,7 +92,7 @@ Copyright
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Guten Ye
+Copyright (c) 2015-2016 Guten Ye
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
