@@ -49,9 +49,8 @@ User.native((err, table) => {
 
 Relationships
 
-```
-r.table("posts").indexCreate("user")
-```
+one-to-many: `r.table("posts").indexCreate("user")`
+many-to-many: `r.table("tags_users__users_tags").indexCreate("users_tags")` `r.table("tags_users__users_tags").indexCreate("tags_users")`
 
 Roadmap
 ------

@@ -8,6 +8,8 @@ module.exports = (function() {
   var adapter = {
     // Which type of primary key is used by default
     pkFormat: 'string',
+    // Without it, find("a") -> {where: {id: NaN}}
+    // With it: find(1) -> {where: {id: "1"}}
 
     // to track schema internally
     syncable: true,
@@ -101,6 +103,7 @@ module.exports = (function() {
      * Update all documents matching a criteria object in a collection.
      */
     update(connectionName, tableName, query, data, cb) {
+      debug("update", connectionName, tableName, query)
       connections[connectionName].tables[tableName].update(query, data, cb)
     },
 
