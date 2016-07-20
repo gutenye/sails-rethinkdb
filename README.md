@@ -52,6 +52,18 @@ Relationships
 one-to-many: `r.table("posts").indexCreate("user")`
 many-to-many: `r.table("tags_users__users_tags").indexCreate("users_tags")` `r.table("tags_users__users_tags").indexCreate("tags_users")`
 
+Assess rethinkdb
+
+```
+sails.r
+sails.conn
+
+# Some times you need create index manulaly
+
+const {r, conn} = sails
+r.table("tags_users__users_tags").indexCreate("users_tags").run(conn, (err, result) => {})
+```
+
 Roadmap
 ------
 
