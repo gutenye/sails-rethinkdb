@@ -1,6 +1,5 @@
-"use strict";
-var Connection = require("./lib/connection")
-var debug = require("debug")("sails-rethinkdb")
+const Connection = require("./lib/connection")
+const debug = require("debug")("sails-rethinkdb")
 
 module.exports = (function() {
   var connections = {}
@@ -73,7 +72,7 @@ module.exports = (function() {
      * Insert a single document into a collection.
      */
     create(connectionName, tableName, data, cb) {
-      debug("create", connectionName, tableName, data)
+      debug("create", tableName, data)
       connections[connectionName].tables[tableName].insert(data, cb)
     },
 
@@ -83,7 +82,7 @@ module.exports = (function() {
      * Insert an array of documents into a collection.
      */
     createEach: function(connectionName, tableName, data, cb) {
-      debug("createEach", connectionName, tableName, data)
+      debug("createEach", tableName, data)
       connections[connectionName].tables[tableName].insertEach(data, cb)
     },
 
@@ -93,7 +92,7 @@ module.exports = (function() {
      * Find all matching documents in a colletion.
      */
     find(connectionName, tableName, query, cb) {
-      debug("find", connectionName, tableName, query)
+      debug("find", tableName, query)
       connections[connectionName].tables[tableName].find(query, cb)
     },
 
@@ -103,7 +102,7 @@ module.exports = (function() {
      * Update all documents matching a criteria object in a collection.
      */
     update(connectionName, tableName, query, data, cb) {
-      debug("update", connectionName, tableName, query)
+      debug("update", tableName, query)
       connections[connectionName].tables[tableName].update(query, data, cb)
     },
 
@@ -113,7 +112,7 @@ module.exports = (function() {
      * Destroy all documents matching a criteria object in a collection.
      */
     destroy(connectionName, tableName, query, cb) {
-      debug("destroy", connectionName, tableName, query)
+      debug("destroy", tableName, query)
       connections[connectionName].tables[tableName].destroy(query, cb)
     },
 
@@ -123,7 +122,7 @@ module.exports = (function() {
      * Return a count of the number of records matching a criteria.
      */
     count(connectionName, tableName, query, cb) {
-      debug("count", connectionName, tableName, query)
+      debug("count", tableName, query)
       connections[connectionName].tables[tableName].count(query, cb)
     },
 
@@ -135,7 +134,7 @@ module.exports = (function() {
      */
     join(connectionName, tableName, query, cb) {
       // {where: null, joins: [{ parent: 'users', parentKey: 'id', child: 'posts', childKey: 'user', select: [Object], alias: 'posts', removeParentKey: false, model: false, collection: true, q: [Object] }] }
-      debug("join %o %o %o", connectionName, tableName, query, query.joins[0].select, query.joins[0].criteria)
+      debug("join %o %o %o", tableName, query, query.joins[0].select, query.joins[0].criteria)
       connections[connectionName].tables[tableName].join(query, cb)
     },
 
