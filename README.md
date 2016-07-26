@@ -41,7 +41,8 @@ native() method
 
 ```
 User.native((err, table) => {
-  table.filter({id: 1}).count().run(table.conn, (err, result) => {
+  var {conn, r} = table
+  table.filter({id: 1}).count().run(conn, (err, result) => {
     ..
   })
 })
