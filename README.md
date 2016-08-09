@@ -2,6 +2,7 @@ sails-rethinkdb, a RethinkDB Adapter for Sails.
 ====================================
 
 
+
 [Homepage](https://github.com/gutenye/sails-rethinkdb) |
 [Documentation](https://github.com/gutenye/sails-rethinkdb/wiki) |
 [Issue Tracker](https://github.com/gutenye/sails-rethinkdb/issues) |
